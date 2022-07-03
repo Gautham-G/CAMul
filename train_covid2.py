@@ -127,7 +127,6 @@ raw_data = []
 for st in states:
     with open(f"./data/covid_data/saves/covid_{st}_{epiweek}.pkl", "rb") as fl:
         raw_data.append(pickle.load(fl))
-print("shape is ", np.array(raw_data).shape())
 
 raw_data = np.array(raw_data)[:, start_day:, :]  # states x days x features
 label_idx = include_cols.index("death_jhu_incidence")
